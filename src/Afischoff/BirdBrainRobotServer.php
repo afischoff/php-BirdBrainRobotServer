@@ -86,7 +86,7 @@ class BirdBrainRobotServer
 
 	private function getServerUrl()
 	{
-		$output = "http://" . $this->serverUrl . ":" . $this->serverPort . "/";
+		$output = $this->serverUrl . ":" . $this->serverPort . "/";
 
 		if ($this->connectedDevice == self::DEVICE_FINCH) {
 			$output .= self::DEVICE_FINCH . "/";
