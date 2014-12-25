@@ -15,6 +15,7 @@ class BirdBrainRobotServer
 	private $serverPort;
 	private $connectedDevice;
 	private $isConnected = false;
+	private $debugMode = false;
 
 	/**
 	 * @param String $serverUrl
@@ -80,6 +81,17 @@ class BirdBrainRobotServer
 		return $this->doRequest("in/temperature");
 	}
 
+	public function speak($msg)
+	{
+		$msgEncoded = urlencode($msg);
+		return $this->doRequest('speak/'.$msgEncoded);
+	}
+
+	public function setDebugMode($onOff)
+	{
+		$this->debugMode = (bool)$onOff;
+	}
+
 	/****************************
 	 *  Internals
 	 ****************************/
@@ -101,6 +113,14 @@ class BirdBrainRobotServer
 
 		if (isset($params)) {
 			$url .= $params;
+		}
+
+		if (strpos($params, "speak/") !== false) {
+			$url = str_replace("/finch/", "/", $url);
+		}
+
+		if ($this->debugMode) {
+			echo "Requesting: {$url}\n";
 		}
 
 		return file_get_contents($url);
