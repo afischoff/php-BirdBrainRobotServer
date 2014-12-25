@@ -1,4 +1,4 @@
 php-BirdBrainRobotServer
 ========================
 
-A PHP wrapper for the Bird Brain Robot Server, written by Bird Brain Technologies
+A PHP wrapper for the Bird Brain Robot Server, written by BirdBrain Technologies LLC

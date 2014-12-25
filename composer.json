@@ -1,0 +1,13 @@
+{
+  "name": "afischoff/php-BirdBrainRobotServer",
+  "description" : "A PHP wrapper for the Bird Brain Robot Server written by BirdBrain Technologies LLC",
+  "require": {
+    "php": ">=5.3.0"
+  },
+  "license" : "MIT",
+  "autoload": {
+    "psr-0": {
+      "Afischoff": "src/"
+    }
+  }
+}
