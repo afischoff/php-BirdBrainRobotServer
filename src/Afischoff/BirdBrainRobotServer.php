@@ -47,7 +47,7 @@ class BirdBrainRobotServer
 
 	public function setMotor($left = 0, $right = 0)
 	{
-		return $this->doRequest("/out/motor/".$left."/".$right);
+		return $this->doRequest("out/motor/".$left."/".$right);
 	}
 
 	public function setBuzzer($frequency = 1000, $duration = 1000)
